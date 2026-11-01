@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#613b91">
+<title>قلعة الضرب | المغامرة الملكية</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:16px;background:linear-gradient(145deg,#f9e9ff,#e5f4ff 55%,#fff0dc);font-family:Tahoma,Arial,sans-serif;color:#38265b}
+#app{max-width:850px;margin:auto;--purple:#613b91;--gold:#e5b94f}
+.screen{background:#ffffffa8;border:1px solid #ead8fa;border-radius:22px;padding:clamp(14px,3vw,28px);min-height:550px;overflow:hidden;position:relative;box-shadow:0 10px 35px #7650a022}
+.top{text-align:center;color:#613b91;font-weight:bold;font-size:13px}.title{font-size:clamp(25px,5vw,40px);font-weight:900;text-align:center;color:#60358c;text-shadow:1px 2px #fff;margin:10px 0}.sub{text-align:center;line-height:1.9;color:#765b91}
+.castle{font-size:clamp(90px,19vw,155px);text-align:center;line-height:1.3;filter:drop-shadow(0 9px 5px #a68aba55);animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-9px)}}
+.btn{border:0;border-radius:15px;padding:13px 23px;background:linear-gradient(120deg,#7544a3,#a34b9c);color:white;font-weight:bold;font-size:16px;cursor:pointer;box-shadow:0 5px 0 #4c2d6c;transition:.15s}.btn:hover{filter:brightness(1.1);transform:translateY(-2px)}.btn.gold{background:linear-gradient(120deg,#d39b28,#f4d77b);color:#55371c;box-shadow:0 5px 0 #a77a21}.btn.light{background:#fff;color:#69468a;border:1px solid #d9c1ec;box-shadow:0 3px 0 #d8c8e6}
+.center{text-align:center}.panel{background:#ffffffdc;border:1px solid #e6d6ef;border-radius:17px;padding:16px;margin:12px 0;box-shadow:0 4px 15px #7650a015}
+.field{width:100%;padding:13px;border:2px solid #dfc9ef;border-radius:12px;background:#fff;font-size:16px;color:#452a67;outline:none}.field:focus{border-color:#9664bd}.label{display:block;font-weight:bold;margin:12px 0 7px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:13px 0}.stat{background:#fff;border:1px solid #eadcf2;border-radius:13px;text-align:center;padding:10px 4px}.stat b{display:block;font-size:22px;color:#69418f;margin-top:4px}.stat small{color:#826e91}
+.progress{height:12px;background:#e5d9ed;border-radius:20px;overflow:hidden;margin:8px 0}.progress>div{height:100%;background:linear-gradient(90deg,#b17ae0,#e9a5d0,#e9c65e);transition:width .4s}
+.stage{text-align:center;color:#72468f;font-weight:bold;background:#fff8e9;border:1px solid #f0dba9;padding:10px;border-radius:12px}.stage-icon{font-size:32px}
+.question{text-align:center;font-size:clamp(35px,8vw,53px);font-weight:900;color:#533079;padding:22px 0}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.option{background:#fff;border:2px solid #dfc9ec;border-radius:14px;padding:16px 7px;font-size:25px;font-weight:bold;color:#5e3d7e;cursor:pointer}.option:hover:not(:disabled){background:#f4e9ff;border-color:#9b70c1}.option:disabled{cursor:default;opacity:.9}.option.correct{background:#d9f7e5;border-color:#43b47a;color:#176c43}.option.wrong{background:#ffe0e6;border-color:#e78a9e;color:#a33d57}
+.feedback{text-align:center;min-height:52px;padding:13px 5px;font-weight:bold;font-size:17px}.hidden{display:none!important}.small{font-size:12px;color:#846e94}.certificate{background:linear-gradient(140deg,#40205f,#754494 55%,#4a285f);border:8px double #e9c45e;border-radius:17px;padding:20px;color:#fff9df;text-align:center;position:relative;overflow:hidden}.certificate:before{content:"✦　✧　✦　✧　✦";display:block;color:#f6d879;letter-spacing:8px;font-size:19px}.cert-title{font-size:clamp(26px,6vw,38px);font-weight:900;color:#ffdc7d;margin:13px 0}.cert-name{display:inline-block;min-width:70%;border-bottom:2px solid #f2d279;padding:12px;font-size:25px;color:#ffe8a0;font-weight:bold}.crown{font-size:70px;animation:float 2s infinite}.fire{position:absolute;pointer-events:none;animation:pop 1.2s ease-out forwards;font-size:23px}@keyframes pop{0%{transform:scale(.2);opacity:0}30%{opacity:1}100%{transform:translateY(-90px) scale(1.5);opacity:0}}
+.footer{text-align:center;color:#816d91;font-size:12px;margin-top:18px;line-height:2}
+@media(max-width:430px){body{padding:8px}.screen{padding:12px}.stats{gap:5px}.stat{padding:8px 2px}}
+@media print{body *{visibility:hidden!important}#certificate,#certificate *{visibility:visible!important}#certificate{position:absolute;left:0;top:0;width:100%;min-height:95vh;border:8px double #d6ad48!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}.no-print{display:none!important}}
+</style>
+</head>
+<body>
+<div id="app">
+<div class="screen">
+<div class="top">✨ مملكة العلم والإبداع ✨</div>
+<section id="home">
+<div class="castle">🏰</div><div class="title">أهلًا بكِ في قلعة الضرب!</div>
+<p class="sub">هل أنتِ مستعدة لتصبحي أميرة جدول الضرب؟<br>أمامكِ أربع مراحل سحرية، وفي نهاية المغامرة ينتظركِ التاج الذهبي!</p>
+<div class="panel">
+<label class="label" for="name">👸 اسم الأميرة</label><input class="field" id="name" placeholder="اكتبي اسمكِ هنا..." maxlength="35">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div><label class="label" for="count">📝 عدد الأسئلة</label><select class="field" id="count"><option value="10">10 أسئلة</option><option value="15">15 سؤالًا</option><option value="20" selected>20 سؤالًا</option><option value="25">25 سؤالًا</option><option value="30">30 سؤالًا</option></select></div>
+<div><label class="label" for="tables">🔢 جداول الضرب</label><select class="field" id="tables"><option value="all">جميع الجداول (1–12)</option><option value="2,3,4,5">الجداول 2–5</option><option value="6,7,8,9">الجداول 6–9</option><option value="10,11,12">الجداول 10–12</option></select></div>
+</div>
+<label style="display:flex;align-items:center;gap:8px;margin-top:14px;font-size:14px"><input type="checkbox" id="sound" checked> 🔔 تفعيل الأصوات والمؤثرات</label>
+</div>
+<div class="center"><button class="btn gold" id="start" style="font-size:20px;padding:17px 34px">✨ ابدئي المغامرة</button></div>
+<div class="center small" style="margin-top:16px">🏰 إعداد المعلمة: ريم مبارك آل بَيُّوض</div><div class="center small">كل إجابة صحيحة تقرّبكِ من التاج! 👑</div>
+</section>
+<section id="play" class="hidden">
+<div class="stage" id="stage"><span class="stage-icon">🚪</span><br>المرحلة الأولى: بوابة القلعة</div>
+<div class="stats"><div class="stat"><small>⭐ النجوم</small><b id="stars">0</b></div><div class="stat"><small>⏱️ الوقت</small><b id="time">00:00</b></div><div class="stat"><small>❓ السؤال</small><b id="number">1/20</b></div></div>
+<div style="display:flex;justify-content:space-between;font-size:12px;font-weight:bold"><span>تقدم المغامرة</span><span id="percent">0%</span></div><div class="progress"><div id="bar" style="width:0%"></div></div>
+<div class="panel"><div class="center small" id="hint">فكري جيدًا واختاري الإجابة الصحيحة</div><div class="question" id="question">٣ × ٤ = ؟</div><div class="options" id="options"></div><div class="feedback" id="feedback" aria-live="polite"></div></div>
+<div class="center"><button class="btn light" id="exit">🏠 العودة للبداية</button></div>
+</section>
+<section id="result" class="hidden">
+<div class="title">📜 نتائج مغامرتكِ الملكية</div><p class="sub" id="greeting"></p>
+<div class="panel"><div class="stats">
+<div class="stat"><small>✅ صحيحة</small><b id="correct">0</b></div><div class="stat"><small>❌ خاطئة</small><b id="wrong">0</b></div><div class="stat"><small>🎯 الإتقان</small><b id="score">0%</b></div>
+<div class="stat"><small>⭐ النجوم</small><b id="finalstars">0</b></div><div class="stat"><small>⏱️ الزمن</small><b id="finaltime">00:00</b></div><div class="stat"><small>👑 الحالة</small><b id="status" style="font-size:14px">متألقة</b></div>
+</div><div class="progress"><div id="resultbar" style="width:0%"></div></div></div>
+<div id="perfect" class="hidden"><div class="center"><div class="crown">👑</div><div class="title" style="color:#b17c18">ملكة جدول الضرب!</div><p class="sub">لقد حققتِ الإتقان الكامل! تستحقين التاج الذهبي!</p></div>
+<div class="certificate" id="certificate"><div class="crown">👑</div><div class="cert-title">بطاقة شكر وتقدير</div><div style="color:#f5d987;font-size:17px">إلى أميرتنا المتألقة</div><div class="cert-name" id="certname"></div>
+<p style="line-height:2;font-size:16px">تستحقين كل الثناء والتقدير لإتقانكِ جدول الضرب بنسبة <b style="color:#ffdf7d">100%</b>.</p><p style="line-height:2">لقد أثبتِّ أن التميز ثمرة الاجتهاد والمثابرة والتركيز.</p><div style="font-size:21px;font-weight:bold;color:#ffdc7d">أنتِ بطلة قلعة الضرب وأميرة التميز!</div><p>فخورون بكِ يا مبدعة 🌟</p>
+<div style="border-top:1px solid #c7a45a;margin-top:15px;padding-top:13px;line-height:2"><b>المعلمة: ريم مبارك آل بَيُّوض</b><br><b style="color:#ffdf7d;font-size:20px">100% إتقان – تستحقين التاج الذهبي!</b></div></div>
+<div class="center no-print" style="margin-top:12px"><button class="btn gold" id="print">🖨️ طباعة البطاقة / حفظ PDF</button></div></div>
+<div id="encourage" class="panel center hidden"><div style="font-size:47px">💜✨</div><div class="title" style="font-size:23px">اقتربتِ من التاج يا بطلة!</div><p class="sub">عاودي المحاولة، فالأميرات لا يستسلمن أبدًا. لديكِ فرصة جديدة لتصبحي ملكة جدول الضرب!</p></div>
+<div class="center no-print" style="margin-top:17px;display:flex;justify-content:center;gap:9px;flex-wrap:wrap"><button class="btn gold" id="retry">🔄 مغامرة جديدة</button><button class="btn light" id="homebtn">🏰 الصفحة الرئيسية</button></div>
+<div class="footer">🏰 إعداد المعلمة: ريم مبارك آل بَيُّوض</div>
+</section>
+<div class="footer" id="footer">✨ بالتوفيق يا أميرة! ✨</div>
+</div></div>
+<script>
+(()=>{
+const $=id=>document.getElementById(id),screens=['home','play','result'];let name='',total=20,questions=[],index=0,correct=0,wrong=0,stars=0,started=0,timer=null,locked=false,withSound=true;
+const praise=['رائعة! 👑','مبدعة! 🌟','أحسنتِ يا بطلة! 💜','إجابة ملكية! ✨','أنتِ ذكية ومتألقة!'];
+const stageData=[{title:'المرحلة الأولى: بوابة القلعة',icon:'🚪',hint:'افتحي البوابة الذهبية بالإجابات الصحيحة!'},{title:'المرحلة الثانية: ممر النجوم',icon:'🌟',hint:'اجمعي النجوم في ممر القلعة السحري!'},{title:'المرحلة الثالثة: برج التحدي',icon:'🏰',hint:'ركزي جيدًا، لقد أصبحتِ قريبة من القمة!'},{title:'المرحلة الرابعة: غرفة الكنز',icon:'💎',hint:'التحدي الأخير! هل أنتِ مستعدة للكنز؟'}];
+function show(id){screens.forEach(s=>$(s).classList.toggle('hidden',s!==id));$('footer').classList.toggle('hidden',id!=='home')}
+function sound(kind){if(!withSound)return;try{const c=new(window.AudioContext||window.webkitAudioContext)(),notes=kind==='win'?[523,659,784,1047]:[440,554,659,880];notes.forEach((n,i)=>{let o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=n;o.type='sine';g.gain.setValueAtTime(.09,c.currentTime+i*.1);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+i*.1+.18);o.start(c.currentTime+i*.1);o.stop(c.currentTime+i*.1+.2)});setTimeout(()=>c.close(),1300)}catch(e){}}
+function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}function elapsed(){return Math.floor((Date.now()-started)/1000)}
+function shuffle(a){for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function makeQuestions(){const tables=$('tables').value==='all'?Array.from({length:12},(_,i)=>i+1):$('tables').value.split(',').map(Number);let pool=[];tables.forEach(a=>{for(let b=1;b<=12;b++)pool.push({a,b,answer:a*b})});shuffle(pool);let chosen=pool.slice(0,Math.min(total,pool.length));while(chosen.length<total)chosen.push({...pool[Math.floor(Math.random()*pool.length)]});return chosen.map((q,i)=>({...q,level:i<Math.ceil(total*.25)?1:i<Math.ceil(total*.5)?2:i<Math.ceil(total*.75)?3:4}))}
+function stage(){let d=stageData[Math.min(3,Math.floor(index/total*4))];$('stage').innerHTML='<span class="stage-icon">'+d.icon+'</span><br>'+d.title;$('hint').textContent=d.hint}
+function render(){if(index>=total){finish();return}locked=false;stage();let q=questions[index];$('number').textContent=(index+1)+'/'+total;$('stars').textContent=stars;$('time').textContent=fmt(elapsed());$('percent').textContent=Math.round(index/total*100)+'%';$('bar').style.width=(index/total*100)+'%';$('question').textContent=q.a+' × '+q.b+' = ؟';$('feedback').textContent='';let choices=new Set([q.answer]);while(choices.size<4){let delta=Math.floor(Math.random()*Math.max(5,q.answer*.4+4))+1,v=Math.random()<.5?q.answer+delta:q.answer-delta;if(v>=0&&v!==q.answer)choices.add(v)}$('options').replaceChildren();shuffle([...choices]).forEach(v=>{let b=document.createElement('button');b.className='option';b.textContent=v;b.type='button';b.addEventListener('click',()=>answer(v,b));$('options').appendChild(b)})}
+function sparkle(){for(let i=0;i<16;i++){let s=document.createElement('span');s.className='fire';s.textContent=['✨','⭐','💫','🌟'][i%4];s.style.left=Math.random()*95+'%';s.style.top=(20+Math.random()*60)+'%';$('play').appendChild(s);setTimeout(()=>s.remove(),1300)}}
+function answer(v,button){if(locked)return;locked=true;let q=questions[index],ok=v===q.answer;[...$('options').children].forEach(b=>{b.disabled=true;if(Number(b.textContent)===q.answer)b.classList.add('correct')});if(ok){correct++;stars++;button.classList.add('correct');$('feedback').textContent='✨ '+praise[Math.floor(Math.random()*praise.length)];$('feedback').style.color='#218354';sound('win');sparkle()}else{wrong++;button.classList.add('wrong');$('feedback').textContent='💜 لا بأس، حاولي مرة أخرى في التحدي القادم. الإجابة الصحيحة: '+q.answer;$('feedback').style.color='#a34b70'}$('stars').textContent=stars;$('bar').style.width=((index+1)/total*100)+'%';$('percent').textContent=Math.round((index+1)/total*100)+'%';setTimeout(()=>{index++;render()},1150)}
+function finish(){clearInterval(timer);timer=null;let pct=Math.round(correct/total*10000)/100,perfect=correct===total,time=fmt(elapsed()),result={name,total,correct,wrong,percent:pct,stars,time,perfect,date:new Date().toLocaleDateString('ar-SA')};try{localStorage.setItem('castleMultiplicationLastResult',JSON.stringify(result))}catch(e){}$('greeting').textContent='أحسنتِ يا '+name+'! لقد أنهيتِ مغامرتكِ الملكية.';$('correct').textContent=correct;$('wrong').textContent=wrong;$('score').textContent=pct+'%';$('finalstars').textContent=stars;$('finaltime').textContent=time;$('resultbar').style.width=pct+'%';$('status').textContent=perfect?'أميرة القلعة 👑':'أميرة مجتهدة';$('perfect').classList.toggle('hidden',!perfect);$('encourage').classList.toggle('hidden',perfect);if(perfect){$('certname').textContent=name;sound('win')}show('result')}
+function start(){name=$('name').value.trim();if(!name){$('name').focus();$('name').placeholder='اكتبي اسمكِ أولًا يا أميرة 💜';return}total=Number($('count').value);withSound=$('sound').checked;questions=makeQuestions();index=correct=wrong=stars=0;locked=false;started=Date.now();show('play');render();timer=setInterval(()=>$('time').textContent=fmt(elapsed()),500)}
+function home(){if(timer){clearInterval(timer);timer=null}show('home')}
+$('start').addEventListener('click',start);$('name').addEventListener('keydown',e=>{if(e.key==='Enter')start()});$('exit').addEventListener('click',home);$('homebtn').addEventListener('click',home);$('retry').addEventListener('click',()=>{show('home');start()});$('print').addEventListener('click',()=>window.print());
+})();
+</script>
+</body></html>
