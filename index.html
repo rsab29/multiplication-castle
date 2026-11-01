@@ -1,129 +1,195 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#7652b5">
 <title>قلعة الضرب | مملكة الجداول</title>
 <style>
-:root{--purple:#67419a;--deep:#40265f;--pink:#e9b8ed;--gold:#e8bd55;--blue:#9ddcf5;--mint:#d8f4e8;--ink:#44305d}
-*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Tahoma,Arial,sans-serif;background:radial-gradient(circle at 10% 15%,#fff 0 1px,transparent 2px),radial-gradient(circle at 80% 30%,#fff 0 1px,transparent 2px),linear-gradient(120deg,#f6dcfa,#dff3ff 55%,#fff0d6);background-size:40px 40px,57px 57px,auto;min-height:100vh}
+:root{--purple:#67419a;--deep:#40265f;--pink:#e9b8ed;--gold:#e8bd55;--blue:#9ddcf5;--mint:#d8f4e8;--ink:#44305d;--paper:#fffafc;--line:#ead8f3;--green:#218354;--red:#a34b70}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font-family:Tahoma,Arial,sans-serif;background:radial-gradient(circle at top right,#f8e8ff 0,#fffafc 48%,#eef8ff 100%);min-height:100vh}
 button,input,select{font:inherit}button{cursor:pointer}
 #app{max-width:1120px;margin:auto;padding:16px}
-header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#ffffffc9;border:1px solid #ead8f3;border-radius:20px;padding:12px 18px;box-shadow:0 5px 18px #72509a17}
-.brand{font-size:clamp(21px,4vw,30px);font-weight:900;color:var(--purple)}.brand small{display:block;font-size:12px;color:#9775aa;font-weight:normal;margin-top:4px}
-.pill{border:1px solid #ead8f3;background:#fff;border-radius:30px;padding:9px 13px;color:#755194;font-size:13px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#ffffffd9;border:1px solid var(--line);border-radius:22px;padding:14px 18px;box-shadow:0 4px 18px #7652b51a}
+.brand{font-size:clamp(21px,4vw,30px);font-weight:900;color:var(--purple)}
+.pill{border:1px solid var(--line);background:#fff;border-radius:30px;padding:9px 13px;color:#755194;font-size:13px}
 nav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
-.navbtn,.btn{border:0;border-radius:13px;padding:11px 16px;background:linear-gradient(120deg,#7950a9,#a85da6);color:white;font-weight:bold;box-shadow:0 4px 0 #513574}
-.navbtn{background:#fff;color:#68468b;border:1px solid #e6d4ef;box-shadow:0 3px 0 #d9c5e6}.navbtn.active{background:linear-gradient(120deg,#7950a9,#a85da6);color:white;box-shadow:0 4px 0 #513574}
-.btn.gold{background:linear-gradient(120deg,#d29b2e,#f4d77b);color:#55371c;box-shadow:0 4px 0 #a77a21}.btn.light{background:#fff;color:#69468a;border:1px solid #dfcce9;box-shadow:0 3px 0 #d8c8e6}.btn:disabled{opacity:.5;cursor:not-allowed}
-main{background:#ffffffa8;border:1px solid #ead8fa;border-radius:24px;padding:clamp(13px,3vw,26px);min-height:590px;box-shadow:0 10px 35px #7650a018}
-.view{display:none}.view.active{display:block}.hero{text-align:center;padding:12px 0 20px}.castle{font-size:clamp(85px,17vw,145px);line-height:1.2;filter:drop-shadow(0 9px 5px #a68aba55);animation:float 3s ease-in-out infinite}@keyframes float{50%{transform:translateY(-8px)}}
-h1{color:#60358c;font-size:clamp(25px,5vw,39px);margin:10px 0}.subtitle{color:#795e92;line-height:1.9}.section-title{font-size:23px;color:#603b87;margin:8px 0 15px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:13px}
-.card{background:#ffffffdf;border:1px solid #e6d5f0;border-radius:20px;padding:17px 12px;text-align:center;box-shadow:0 5px 0 #d8bce7;transition:.18s;min-height:145px}.card.click{cursor:pointer}.card.click:hover{transform:translateY(-3px);box-shadow:0 8px 0 #cba6df}.emoji{font-size:36px;margin-bottom:8px}.card h3{font-size:17px;color:#50366f;margin:6px 0 9px}.muted{font-size:13px;color:#47846e}.small{font-size:12px;color:#826e91;line-height:1.8}
-.panel{background:#ffffffdc;border:1px solid #e6d6ef;border-radius:17px;padding:16px;margin:12px 0;box-shadow:0 4px 15px #7650a015}
-.field{width:100%;padding:12px;border:2px solid #dfc9ef;border-radius:12px;background:#fff;color:#452a67}
+.navbtn,.btn{border:1px solid #e6d4ef;background:#fff;color:#68468b;border-radius:13px;padding:11px 16px;font-weight:bold}
+.navbtn.active,.btn.gold{background:linear-gradient(120deg,#7950a9,#a85da6);color:white;border:0}
+.btn.light{background:#fff}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+main{background:#ffffffc9;border:1px solid var(--line);border-radius:24px;padding:clamp(15px,3vw,26px);box-shadow:0 8px 26px #7652b51a;min-height:480px}
+.view{display:none}.view.active{display:block}
+.hero{text-align:center;padding:20px 10px}.crown{font-size:48px}
+h1{font-size:clamp(27px,5vw,39px);margin:10px 0;color:#60358c}
+h2{margin:8px 0 15px;color:#60358c}h3{margin:8px 0}
+.subtitle{color:#795e92;line-height:1.9}.small,.muted{color:#8b789c;font-size:13px;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:14px 0}
+.card,.panel,.fact,.game-card{background:#fff;border:1px solid #e7d8ef;border-radius:18px;padding:16px;box-shadow:0 3px 12px #7652b510}
+.card{text-align:center}.emoji{font-size:35px}.game-card{cursor:pointer;text-align:center;transition:.2s}.game-card:hover{transform:translateY(-3px);border-color:#b99bd0}
+.field{width:100%;padding:12px;border:1px solid #d9c7e8;border-radius:12px;background:#fff;color:var(--ink);margin:7px 0}
 .toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}.toolbar label{font-weight:bold}
 .table-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:9px}
-.fact{background:#fff;border:1px solid #e7d8ef;border-radius:12px;padding:13px;text-align:center;font-size:18px;font-weight:bold;color:#57377d}
-.fact span{color:#b47c24}
-.game-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px}
-.game-card{background:#fff;border:1px solid #e4d2ef;border-radius:18px;padding:17px 12px;text-align:center;box-shadow:0 5px 0 #d8bce7;cursor:pointer}.game-card:hover{transform:translateY(-2px)}
-.game-card .emoji{font-size:35px}.game-card b{display:block;color:#51376e;margin:7px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.stat{background:white;border:1px solid #eadcf2;border-radius:13px;text-align:center;padding:10px 4px}.stat b{display:block;font-size:21px;color:#69418f;margin-top:4px}
-.progress{height:11px;background:#e5d9ed;border-radius:20px;overflow:hidden;margin:8px 0}.progress>div{height:100%;background:linear-gradient(90deg,#b17ae0,#e9a5d0,#e9c65e);transition:width .3s}
-.question{text-align:center;font-size:clamp(36px,8vw,55px);font-weight:900;color:#533079;padding:18px 0}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.option{background:#fff;border:2px solid #dfc9ec;border-radius:14px;padding:15px 7px;font-size:25px;font-weight:bold;color:#5e3d7e}.option.correct{background:#d9f7e5;border-color:#43b47a;color:#176c43}.option.wrong{background:#ffe0e6;border-color:#e78a9e;color:#a33d57}.option:disabled{opacity:.95}
-.feedback{text-align:center;min-height:45px;padding:12px;font-weight:bold;font-size:17px}.hidden{display:none!important}
-.certificate{background:linear-gradient(140deg,#40205f,#754494 55%,#4a285f);border:9px double #e9c45e;border-radius:18px;padding:23px;color:#fff9df;text-align:center;max-width:720px;margin:15px auto;print-color-adjust:exact;-webkit-print-color-adjust:exact}.certificate h2{font-size:32px;color:#ffdc7d}.cert-name{display:inline-block;min-width:65%;border-bottom:2px solid #f2d279;padding:12px;font-size:26px;color:#ffe8a0;font-weight:bold}.crown{font-size:65px}
-footer{text-align:center;color:#816d91;font-size:12px;padding:18px}
-@media(max-width:600px){#app{padding:8px}main{padding:12px}.stats{grid-template-columns:repeat(2,1fr)}.navbtn{flex:1 1 42%}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:13px 7px;min-height:130px}}
-@media print{body *{visibility:hidden!important}#certificate,#certificate *{visibility:visible!important}#certificate{position:absolute;inset:0;width:100%;max-width:none;min-height:95vh;margin:0}.no-print{display:none!important}}
+.fact{text-align:center;font-size:18px;font-weight:bold}.fact span{color:#b47c24}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:14px 0}
+.stat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:12px;text-align:center}.stat b{display:block;font-size:23px;color:var(--purple);margin-top:5px}
+.progress{height:12px;background:#eee2f5;border-radius:20px;overflow:hidden}.progress>div{height:100%;width:0;background:linear-gradient(90deg,#7950a9,#e8bd55);transition:.25s}
+.question{text-align:center;font-size:clamp(32px,7vw,52px);font-weight:900;padding:25px 5px;color:#51376e}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:600px;margin:15px auto}
+.option{padding:18px;border:2px solid #e4d2ef;border-radius:17px;background:#fff;color:#51376e;font-size:25px;font-weight:bold}
+.option.correct{background:#dff6e9;border-color:#62bd89;color:#176c43}.option.wrong{background:#ffe5ed;border-color:#d8799c;color:#9c315a}
+.feedback{text-align:center;min-height:36px;font-weight:bold;font-size:18px;margin:12px}
+.center{text-align:center}.hidden{display:none!important}
+footer{text-align:center;padding:18px;color:#927fa1;font-size:12px}
+@media(max-width:520px){#app{padding:9px}main{padding:13px}.navbtn{flex:1;padding:10px 8px;font-size:13px}.options{gap:8px}.option{padding:15px 8px}}
+@media print{body{background:white}header,nav,.no-print,footer{display:none!important}main{border:0;box-shadow:none}.view{display:none!important}#result.active{display:block!important}#certificate{border:5px double #c69b35;padding:35px;text-align:center}}
 </style>
 </head>
-<body><div id="app">
-<header><div class="brand">🏰 قلعة الضرب <small>مملكة الجداول والمغامرات</small></div><div class="pill">👑 إعداد المعلمة: ريم مبارك آل بَيُّوض</div></header>
+<body>
+<div id="app">
+<header>
+  <div><div class="brand">🏰 قلعة الضرب</div><div class="small">مملكة الجداول من ١ إلى ١٢</div></div>
+  <div class="pill">⭐ نجومك: <b id="headerStars">٠</b></div>
+</header>
 <nav class="no-print">
-<button class="navbtn active" data-view="home">🏰 الرئيسية</button><button class="navbtn" data-view="learn">📚 تعلمي الجداول</button><button class="navbtn" data-view="games">🎮 ألعاب الجداول</button><button class="navbtn" data-view="errors">💡 مراجعة الأخطاء</button><button class="navbtn" data-view="test">🏆 الاختبار الشامل</button><button class="navbtn" data-view="progress">📊 إنجازاتي</button>
+  <button class="navbtn active" data-view="home">🏠 الرئيسية</button>
+  <button class="navbtn" data-view="learn">📘 تعلمي</button>
+  <button class="navbtn" data-view="games">🎮 الألعاب</button>
+  <button class="navbtn" data-view="test">🏆 الاختبار</button>
+  <button class="navbtn" data-view="errors">💡 المراجعة</button>
+  <button class="navbtn" data-view="progress">📊 إنجازاتي</button>
 </nav>
 <main>
 <section class="view active" id="home">
-<div class="hero"><div class="castle">🏰</div><h1>أهلًا بكِ في قلعة الضرب!</h1><p class="subtitle">تعلمي جداول الضرب من ١ إلى ١٢، والعبِي ألعابًا ممتعة، واجمعي النجوم لتصبحي أميرة الرياضيات!<br>هل أنتِ مستعدة للمغامرة؟</p></div>
-<div class="panel"><label><b>👸 اسم الطالبة</b></label><input id="studentName" class="field" maxlength="35" placeholder="اكتبي اسمكِ هنا"><p class="small">سيظهر اسمكِ في النتائج وبطاقة الشكر عند تحقيق الإتقان الكامل.</p></div>
-<div class="grid">
-<div class="card click" data-goto="learn"><div class="emoji">📚</div><h3>مملكة الجداول</h3><div class="muted">تعلمي الجداول من ١ إلى ١٢</div></div>
-<div class="card click" data-goto="games"><div class="emoji">🎮</div><h3>مدينة الألعاب</h3><div class="muted">أربع ألعاب لكل جدول</div></div>
-<div class="card click" data-goto="errors"><div class="emoji">💡</div><h3>مرآة المراجعة</h3><div class="muted">راجعي الأسئلة التي أخطأتِ فيها</div></div>
-<div class="card click" data-goto="test"><div class="emoji">👑</div><h3>اختبار التتويج</h3><div class="muted">اختبار شامل لجميع الجداول</div></div>
-</div>
+ <div class="hero"><div class="crown">👑🏰</div><h1>مرحبًا بكِ في قلعة الضرب!</h1><p class="subtitle">هيا نتعلم جداول الضرب ونخوض مغامرات ممتعة. كل إجابة صحيحة تقرّبكِ من تاج الأميرة!</p></div>
+ <div class="panel">
+  <label for="studentName">اسم البطلة</label><input class="field" id="studentName" maxlength="30" placeholder="اكتبي اسمك هنا">
+  <div class="grid">
+   <button class="btn gold" data-goto="learn">📘 ابدئي التعلم</button>
+   <button class="btn gold" data-goto="games">🎮 اختاري لعبة</button>
+   <button class="btn gold" data-goto="test">🏆 ابدئي الاختبار</button>
+  </div>
+ </div>
+ <div class="stats"><div class="stat">⭐ النجوم<b id="homeStars">٠</b></div><div class="stat">🎯 الجولات<b id="homeGames">٠</b></div><div class="stat">👑 الاختبارات الكاملة<b id="homePerfect">٠</b></div></div>
 </section>
 <section class="view" id="learn">
-<h2 class="section-title">📚 مملكة جداول الضرب</h2><p class="subtitle">اختاري جدولًا، وتأملي حقائقه، ثم انتقلي إلى ألعابه للتدرب.</p>
-<div class="toolbar"><label for="learnTable">اختاري الجدول:</label><select id="learnTable" class="field" style="max-width:230px"></select></div>
-<div class="panel"><h2 id="learnTitle" class="section-title">جدول الضرب</h2><div id="facts" class="table-facts"></div></div>
-<button class="btn gold" id="learnPlay">🎮 انتقلي إلى ألعاب هذا الجدول</button>
+ <h2>📘 تعلمي جداول الضرب</h2><p class="subtitle">اختاري جدولًا، ثم راجعي الحقائق خطوة خطوة.</p>
+ <div class="toolbar"><label for="learnTable">الجدول:</label><select class="field" id="learnTable" style="max-width:220px"></select><button class="btn gold" id="learnPlay">🎮 تدرّبي على هذا الجدول</button></div>
+ <h3 id="learnTitle"></h3><div class="table-facts" id="facts"></div>
 </section>
 <section class="view" id="games">
-<h2 class="section-title">🎠 مدينة ألعاب الجداول</h2><p class="subtitle">لكل جدول أربع مغامرات صغيرة. اختاري الجدول ثم اللعبة التي تحبينها!</p>
-<div class="toolbar"><label for="gameTable">جدول الضرب:</label><select id="gameTable" class="field" style="max-width:230px"></select></div>
-<div class="game-grid" id="gameGrid"></div>
-</section>
-<section class="view" id="errors">
-<h2 class="section-title">💡 مرآة مراجعة الأخطاء</h2><p class="subtitle">كل خطأ فرصة جديدة للتعلم. راجعي المسائل ثم تدربي عليها مرة أخرى.</p>
-<div class="panel"><div class="toolbar"><b>عدد المسائل للمراجعة:</b><span id="errorCount" class="pill">٠</span><button class="btn light" id="clearErrors">مسح سجل الأخطاء</button></div><div id="errorList"></div><button class="btn gold hidden" id="retryErrors">🔁 تدربي على أخطائي</button></div>
+ <h2>🎮 ساحة الألعاب</h2><p class="subtitle">اختاري جدول الضرب ونوع المغامرة.</p>
+ <div class="toolbar"><label for="gameTable">جدول الضرب:</label><select class="field" id="gameTable" style="max-width:220px"></select></div>
+ <div class="grid" id="gameGrid"></div>
 </section>
 <section class="view" id="test">
-<h2 class="section-title">🏆 اختبار قلعة الضرب الشامل</h2><p class="subtitle">اختبري إتقانكِ في جميع الجداول من ١ إلى ١٢. بطاقة الشكر لا تُمنح إلا عند ١٠٠٪.</p>
-<div class="panel"><label><b>عدد أسئلة الاختبار</b></label><select id="testCount" class="field"><option>10</option><option selected>20</option><option>30</option><option>40</option><option>60</option></select><p class="small">تُخلط الأسئلة في كل محاولة، ولا يتكرر السؤال في الجولة الواحدة.</p><button class="btn gold" id="startTest">✨ ابدئي اختبار التتويج</button></div>
+ <h2>🏆 اختبار الأميرة</h2><p class="subtitle">اختبري معلوماتك في جميع جداول الضرب.</p>
+ <div class="panel"><label for="testCount">عدد الأسئلة:</label><select class="field" id="testCount"><option value="12">١٢ سؤالًا</option><option value="24">٢٤ سؤالًا</option><option value="36">٣٦ سؤالًا</option><option value="60">٦٠ سؤالًا</option></select><button class="btn gold" id="startTest">ابدئي الاختبار ✨</button></div>
 </section>
-<section class="view" id="progress">
-<h2 class="section-title">📊 سجل إنجازاتكِ</h2><div class="stats">
-<div class="stat">⭐ النجوم<b id="pStars">٠</b></div><div class="stat">🎮 ألعاب مكتملة<b id="pGames">٠</b></div><div class="stat">❌ أخطاء للمراجعة<b id="pErrors">٠</b></div><div class="stat">🏆 اختبارات كاملة<b id="pPerfect">٠</b></div>
-</div><div class="panel"><h3>تقدمكِ في الجداول</h3><div id="tableProgress" class="grid"></div></div><p class="small">يُحفظ تقدمكِ على هذا الجهاز والمتصفح.</p></section>
 <section class="view" id="play">
-<div class="pill" id="playLabel">🎮 تحدي جدول الضرب</div><div class="stats" style="margin-top:12px"><div class="stat">⭐ النجوم<b id="qStars">٠</b></div><div class="stat">⏱️ الوقت<b id="qTime">00:00</b></div><div class="stat">❓ السؤال<b id="qNum">١/٢٠</b></div><div class="stat">✅ الصحيحة<b id="qCorrect">٠</b></div></div>
-<div style="display:flex;justify-content:space-between;font-size:12px;font-weight:bold"><span>تقدم التحدي</span><span id="qPercent">٠٪</span></div><div class="progress"><div id="qBar" style="width:0%"></div></div>
-<div class="panel"><div class="subtitle" id="qHint">فكري جيدًا واختاري الإجابة الصحيحة</div><div class="question" id="question">٣ × ٤ = ؟</div><div class="options" id="options"></div><div class="feedback" id="feedback" aria-live="polite"></div></div>
-<button class="btn light" id="quitPlay">↩ العودة للألعاب</button>
+ <div class="toolbar" style="justify-content:space-between"><b id="playLabel">🎮 المغامرة</b><button class="btn light" id="quitPlay">إنهاء الجولة</button></div>
+ <p class="subtitle center" id="qHint"></p>
+ <div class="stats"><div class="stat">السؤال<b id="qNum">٠/٠</b></div><div class="stat">⭐ النجوم<b id="qStars">٠</b></div><div class="stat">✅ الصحيحة<b id="qCorrect">٠</b></div><div class="stat">⏱ الوقت<b id="qTime">00:00</b></div></div>
+ <div class="progress"><div id="qBar"></div></div><div class="center small" id="qPercent">٠٪</div>
+ <div class="question" id="question">؟</div><div class="options" id="options"></div><div class="feedback" id="feedback" aria-live="polite"></div>
 </section>
 <section class="view" id="result">
-<h2 class="section-title">📜 نتيجة مغامرتكِ</h2><p class="subtitle" id="resultGreeting"></p><div class="stats">
-<div class="stat">✅ الصحيحة<b id="rCorrect">٠</b></div><div class="stat">❌ الخاطئة<b id="rWrong">٠</b></div><div class="stat">🎯 الإتقان<b id="rScore">٠٪</b></div><div class="stat">⭐ النجوم<b id="rStars">٠</b></div><div class="stat">⏱️ الزمن<b id="rTime">00:00</b></div><div class="stat">👑 الحالة<b id="rStatus">متألقة</b></div>
-</div><div id="perfectBox" class="hidden"><div class="hero"><div class="crown">👑</div><h1>ملكة جدول الضرب!</h1><p class="subtitle">لقد حققتِ الإتقان الكامل. تستحقين التاج الذهبي!</p></div>
-<div class="certificate" id="certificate"><div class="crown">👑</div><h2>بطاقة شكر وتقدير</h2><p>إلى أميرتنا المتألقة</p><div class="cert-name" id="certName"></div><p style="line-height:2">تستحقين كل الثناء والتقدير لإتقانكِ جدول الضرب بنسبة <b>١٠٠٪</b>.</p><p style="line-height:2">لقد أثبتِّ أن التميز ثمرة الاجتهاد والمثابرة والتركيز.</p><h2>أنتِ بطلة قلعة الضرب وأميرة التميز!</h2><p>فخورون بكِ يا مبدعة 🌟</p><hr><b>المعلمة: ريم مبارك آل بَيُّوض</b><h2>١٠٠٪ إتقان – تستحقين التاج الذهبي!</h2></div>
-<button class="btn gold no-print" id="printCert">🖨️ طباعة البطاقة / حفظ PDF</button></div>
-<div id="notPerfect" class="panel hidden" style="text-align:center"><div class="crown">💜</div><h2>اقتربتِ من التاج يا بطلة!</h2><p>عاودي المحاولة، فالأميرات لا يستسلمن أبدًا. بطاقة الشكر تنتظركِ عندما تحققين ١٠٠٪ كاملة.</p></div>
-<div class="toolbar no-print"><button class="btn gold" id="again">🔄 تحدٍ جديد</button><button class="btn light" id="backHome">🏰 الرئيسية</button></div>
+ <div class="hero"><div class="crown">🏆👑</div><h1 id="resultGreeting">أحسنتِ!</h1><p class="subtitle">انتهت مغامرتكِ بنجاح. استمري في التألق!</p></div>
+ <div class="stats"><div class="stat">✅ الصحيحة<b id="rCorrect">٠</b></div><div class="stat">❌ الخاطئة<b id="rWrong">٠</b></div><div class="stat">🌟 النتيجة<b id="rScore">٠٪</b></div><div class="stat">⭐ النجوم<b id="rStars">٠</b></div><div class="stat">⏱ الوقت<b id="rTime">00:00</b></div></div>
+ <div id="certificate" class="panel center"><div class="crown">👑</div><h2 id="rStatus">أميرة مجتهدة</h2><p>شهادة تقدير للبطلة</p><h2 id="certName"></h2><p>لإنجازها مغامرة في قلعة الضرب</p><div id="perfectBox" class="hidden">🌟 أداء مثالي! جميع الإجابات صحيحة 🌟</div></div>
+ <div class="toolbar center no-print" style="justify-content:center"><button class="btn gold" id="printCert">🖨️ طباعة الشهادة</button><button class="btn" id="again">اختبار جديد</button><button class="btn" id="backHome">الرئيسية</button></div>
 </section>
-</main><footer>🏰 قلعة الضرب | إعداد المعلمة: ريم مبارك آل بَيُّوض</footer>
+<section class="view" id="errors">
+ <h2>💡 مراجعة الأخطاء</h2><p class="subtitle">هذه العمليات التي تحتاج إلى تدريب إضافي.</p><div class="pill">عدد العمليات: <b id="errorCount">٠</b></div><div id="errorList" class="grid"></div><div class="toolbar"><button class="btn gold" id="retryErrors">🔁 أعيدي المحاولة</button><button class="btn light" id="clearErrors">مسح سجل الأخطاء</button></div>
+</section>
+<section class="view" id="progress">
+ <h2>📊 إنجازاتي</h2><div class="stats"><div class="stat">⭐ النجوم<b id="pStars">٠</b></div><div class="stat">🎮 الجولات<b id="pGames">٠</b></div><div class="stat">💡 الأخطاء<b id="pErrors">٠</b></div><div class="stat">👑 الكامل<b id="pPerfect">٠</b></div></div><h3>رحلتك مع الجداول</h3><div class="grid" id="tableProgress"></div>
+</section>
+</main>
+<footer>🌷 إعداد تعليمي — قلعة الضرب | بالتوفيق يا بطلة</footer>
 </div>
 <script>
 (()=>{
-const $=id=>document.getElementById(id),digits=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]),storeKey='multiplicationCastle_v2';
-let data={errors:[],stars:0,completed:[],perfect:0};try{data={...data,...JSON.parse(localStorage.getItem(storeKey)||'{}')}}catch(e){}
-let mode='test',activeTable=1,gameType='اختاري الإجابة',questions=[],idx=0,correct=0,wrong=0,started=0,timer=null,locked=false,student='',soundOn=true;
-const tables=Array.from({length:12},(_,i)=>i+1),encouragement=['رائعة! 👑','مبدعة! 🌟','أحسنتِ يا بطلة! 💜','إجابة ملكية! ✨','يا لكِ من ذكية!'];
-const games=[['🎴','البطاقات الخاطفة','راجعي حقائق الجدول بسرعة'],['🎯','اختاري الإجابة','أصيبي الإجابة الصحيحة من أربعة خيارات'],['🧩','العدد المفقود','اكتشفي العدد الناقص'],['⚡','سباق الصواريخ','أجيبي بسرعة واجمعي النجوم']];
-function save(){try{localStorage.setItem(storeKey,JSON.stringify(data))}catch(e){}}
-function view(id){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.navbtn').forEach(x=>x.classList.toggle('active',x.dataset.view===id));if(id==='errors')renderErrors();if(id==='progress')renderProgress();window.scrollTo({top:0,behavior:'smooth'})}
-function populate(sel){tables.forEach(n=>{let o=document.createElement('option');o.value=n;o.textContent='جدول '+digits(n);$(sel).append(o)})}
-populate('learnTable');populate('gameTable');
-function facts(){let n=+$('learnTable').value;$('learnTitle').textContent='جدول الضرب '+digits(n);$('facts').innerHTML='';for(let i=1;i<=12;i++){let d=document.createElement('div');d.className='fact';d.innerHTML=digits(n)+' × '+digits(i)+' = <span>'+digits(n*i)+'</span>';$('facts').append(d)}}
-function gameCards(){let n=+$('gameTable').value;$('gameGrid').innerHTML='';games.forEach((g,i)=>{let d=document.createElement('div');d.className='game-card';d.innerHTML='<div class="emoji">'+g[0]+'</div><b>'+g[1]+'</b><div class="small">'+g[2]+'</div><div class="muted">ابدئي اللعب ◇</div>';d.onclick=()=>startRound('game',n,i);$('gameGrid').append(d)})}
-function shuffle(a){for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function buildPool(selected){let pool=[];selected.forEach(a=>{for(let b=1;b<=12;b++)pool.push({a,b,answer:a*b})});return shuffle(pool)}
-function startRound(which,table=0,type=0,custom=null){student=$('studentName').value.trim()||'أميرتنا';mode=which;activeTable=table;gameType=games[type]?.[1]||'الاختبار الشامل';let pool=custom||buildPool(which==='game'?[table]:tables);let count=which==='test'?+$('testCount').value:which==='errors'?pool.length:12;questions=pool.slice(0,count);if(questions.length<count){let extra=buildPool(which==='game'?[table]:tables);while(questions.length<count)questions.push(extra[questions.length%extra.length])}idx=correct=wrong=0;locked=false;started=Date.now();soundOn=true;view('play');$('playLabel').textContent=which==='test'?'🏆 اختبار جميع الجداول':which==='errors'?'💡 مراجعة الأخطاء':'🎮 '+gameType+' – جدول '+digits(table);$('qHint').textContent=which==='game'&&type===0?'بطاقة خاطفة: تذكري ناتج عملية الضرب!':type===2?'أكملي العملية واختاري الناتج الصحيح':'فكري جيدًا، ثم اختاري الإجابة الصحيحة من بين الخيارات';renderQuestion();clearInterval(timer);timer=setInterval(()=>$('qTime').textContent=fmt(elapsed()),500)}
-function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}function elapsed(){return Math.floor((Date.now()-started)/1000)}
-function renderQuestion(){if(idx>=questions.length){finish();return}locked=false;let q=questions[idx];$('qNum').textContent=digits(idx+1)+'/'+digits(questions.length);$('qStars').textContent=digits(data.stars);$('qCorrect').textContent=digits(correct);$('qPercent').textContent=digits(Math.round(idx/questions.length*100))+'٪';$('qBar').style.width=(idx/questions.length*100)+'%';$('question').textContent=digits(q.a)+' × '+digits(q.b)+' = ؟';$('feedback').textContent='';let set=new Set([q.answer]);while(set.size<4){let d=Math.floor(Math.random()*Math.max(5,q.answer*.35+5))+1,v=Math.random()<.5?q.answer+d:q.answer-d;if(v>=0&&v!==q.answer)set.add(v)}$('options').innerHTML='';shuffle([...set]).forEach(v=>{let b=document.createElement('button');b.className='option';b.textContent=digits(v);b.onclick=()=>answer(v,b);$('options').append(b)})}
-function playTone(){if(!soundOn)return;try{let c=new(window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=790;g.gain.value=.07;o.start();o.stop(c.currentTime+.18);setTimeout(()=>c.close(),300)}catch(e){}}
-function answer(v,btn){if(locked)return;locked=true;let q=questions[idx],ok=v===q.answer;[...$('options').children].forEach(b=>{b.disabled=true;if(b.textContent===digits(q.answer))b.classList.add('correct')});if(ok){correct++;data.stars++;$('feedback').textContent='✨ '+encouragement[Math.floor(Math.random()*encouragement.length)];$('feedback').style.color='#218354';playTone()}else{wrong++;btn.classList.add('wrong');$('feedback').textContent='💜 لا بأس، الإجابة الصحيحة هي '+digits(q.answer)+'. أضيفت للمراجعة.';$('feedback').style.color='#a34b70';let key=q.a+'x'+q.b;if(!data.errors.some(e=>e.key===key))data.errors.push({a:q.a,b:q.b,answer:q.answer,key});save()}$('qStars').textContent=digits(data.stars);$('qCorrect').textContent=digits(correct);$('qBar').style.width=((idx+1)/questions.length*100)+'%';$('qPercent').textContent=digits(Math.round((idx+1)/questions.length*100))+'٪';setTimeout(()=>{idx++;renderQuestion()},950)}
-function finish(){clearInterval(timer);timer=null;let total=questions.length,pct=correct/total*100,perfect=correct===total;data.completed.push(mode==='game'?'جدول '+activeTable+' – '+gameType:mode);if(perfect&&mode==='test')data.perfect++;save();$('resultGreeting').textContent='أحسنتِ يا '+student+'! انتهت مغامرتكِ.';$('rCorrect').textContent=digits(correct);$('rWrong').textContent=digits(wrong);$('rScore').textContent=digits(pct)+'٪';$('rStars').textContent=digits(correct);$('rTime').textContent=fmt(elapsed());$('rStatus').textContent=perfect?'أميرة القلعة 👑':'أميرة مجتهدة';$('perfectBox').classList.toggle('hidden',!perfect||mode!=='test');$('notPerfect').classList.toggle('hidden',perfect&&mode==='test');if(perfect&&mode==='test'){$('certName').textContent=student}view('result')}
-function renderErrors(){$('errorCount').textContent=digits(data.errors.length);$('errorList').innerHTML='';if(!data.errors.length){$('errorList').innerHTML='<p class="subtitle">رائع! لا توجد أخطاء مسجلة حاليًا. 🌟</p>';$('retryErrors').classList.add('hidden');return}data.errors.forEach(e=>{let d=document.createElement('div');d.className='fact';d.style.margin='7px 0';d.textContent=digits(e.a)+' × '+digits(e.b)+' = '+digits(e.answer);$('errorList').append(d)});$('retryErrors').classList.remove('hidden')}
-function renderProgress(){$('pStars').textContent=digits(data.stars);$('pGames').textContent=digits(data.completed.length);$('pErrors').textContent=digits(data.errors.length);$('pPerfect').textContent=digits(data.perfect);$('tableProgress').innerHTML='';tables.forEach(n=>{let d=document.createElement('div');d.className='card';d.innerHTML='<div class="emoji">📘</div><h3>جدول '+digits(n)+'</h3><div class="muted">'+(data.completed.some(x=>x.includes('جدول '+n+' –'))?'خضتِ لعبة فيه':'بانتظار مغامرتكِ')+'</div>';$('tableProgress').append(d)})}
-document.querySelectorAll('.navbtn').forEach(b=>b.onclick=()=>view(b.dataset.view));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>view(b.dataset.goto));
-$('learnTable').onchange=facts;$('gameTable').onchange=gameCards;$('learnPlay').onclick=()=>{$('gameTable').value=$('learnTable').value;gameCards();view('games')};
-$('startTest').onclick=()=>startRound('test');$('retryErrors').onclick=()=>{if(data.errors.length)startRound('errors',0,0,data.errors.map(e=>({a:e.a,b:e.b,answer:e.answer})))};
+'use strict';
+const $=id=>document.getElementById(id);
+const digits=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[Number(d)]);
+const storeKey='multiplicationCastle_v3';
+let data={errors:[],stars:0,completed:[],perfect:0};
+try{data={...data,...JSON.parse(localStorage.getItem(storeKey)||'{}')}}catch(e){}
+if(!Array.isArray(data.errors))data.errors=[];
+if(!Array.isArray(data.completed))data.completed=[];
+let mode='test',activeTable=1,gameType='اختاري الإجابة',gameIndex=1,questions=[],idx=0,correct=0,wrong=0,started=0,timer=null,locked=false,student='أميرتنا';
+const tables=Array.from({length:12},(_,i)=>i+1);
+const games=[['🎴','البطاقات الخاطفة','تدرّبي على حقائق الجدول بسرعة'],['🎯','اختاري الإجابة','أصيبي الناتج الصحيح من أربعة خيارات'],['🧩','العدد المفقود','اكتشفي الناتج الناقص'],['⚡','سباق الصواريخ','أجيبي واجمعي النجوم']];
+function save(){try{localStorage.setItem(storeKey,JSON.stringify(data))}catch(e){alert('تعذر حفظ التقدم على هذا الجهاز.')}}
+function view(id){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.navbtn').forEach(x=>x.classList.toggle('active',x.dataset.view===id));if(id==='errors')renderErrors();if(id==='progress')renderProgress();if(id==='home')renderHome();window.scrollTo({top:0,behavior:'smooth'})}
+function populate(id){const el=$(id);if(!el)return;el.innerHTML='';tables.forEach(n=>{const o=document.createElement('option');o.value=n;o.textContent='جدول '+digits(n);el.append(o)})}
+function facts(){const n=+$('learnTable').value;$('learnTitle').textContent='جدول الضرب '+digits(n);$('facts').innerHTML='';for(let i=1;i<=12;i++){const d=document.createElement('div');d.className='fact';d.innerHTML=digits(n)+' × '+digits(i)+' = <span>'+digits(n*i)+'</span>';$('facts').append(d)}}
+function gameCards(){const n=+$('gameTable').value;$('gameGrid').innerHTML='';games.forEach((g,i)=>{const d=document.createElement('div');d.className='game-card';d.innerHTML='<div class="emoji">'+g[0]+'</div><b>'+g[1]+'</b><div class="small">'+g[2]+'</div><div class="muted">ابدئي اللعب ◇</div>';d.onclick=()=>startRound('game',n,i);$('gameGrid').append(d)})}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function buildPool(selected){const pool=[];selected.forEach(a=>{for(let b=1;b<=12;b++)pool.push({a,b,answer:a*b})});return shuffle(pool)}
+function startRound(which,table=0,type=1,custom=null){
+ student=$('studentName').value.trim()||'أميرتنا';mode=which;activeTable=table;gameIndex=type;gameType=games[type]?.[1]||'الاختبار الشامل';
+ let pool=custom?shuffle([...custom]):buildPool(which==='game'?[table]:tables);
+ let count=which==='test'?+$('testCount').value:which==='errors'?pool.length:12;
+ questions=pool.slice(0,count);while(questions.length<count){const extra=buildPool(which==='game'?[table]:tables);questions.push(...extra.slice(0,count-questions.length))}
+ idx=correct=wrong=0;locked=false;started=Date.now();view('play');
+ $('playLabel').textContent=which==='test'?'🏆 اختبار جميع الجداول':which==='errors'?'💡 مراجعة الأخطاء':'🎮 '+gameType+' – جدول '+digits(table);
+ $('qHint').textContent=type===0?'بطاقة خاطفة: تذكري ناتج عملية الضرب!':type===2?'أكملي العملية واختاري الناتج الصحيح':'فكري جيدًا ثم اختاري الإجابة الصحيحة';
+ renderQuestion();clearInterval(timer);timer=setInterval(()=>$('qTime').textContent=fmt(elapsed()),500)
+}
+function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+function elapsed(){return Math.floor((Date.now()-started)/1000)}
+function renderQuestion(){
+ if(idx>=questions.length){finish();return}
+ locked=false;const q=questions[idx];
+ $('qNum').textContent=digits(idx+1)+'/'+digits(questions.length);$('qStars').textContent=digits(data.stars);$('qCorrect').textContent=digits(correct);
+ $('qPercent').textContent=digits(Math.round(idx/questions.length*100))+'٪';$('qBar').style.width=(idx/questions.length*100)+'%';
+ $('question').textContent=gameIndex===2&&mode==='game'?digits(q.a)+' × ؟ = '+digits(q.answer):digits(q.a)+' × '+digits(q.b)+' = ؟';
+ $('feedback').textContent='';$('feedback').style.color='';
+ const set=new Set([q.answer]);while(set.size<4){let delta=Math.floor(Math.random()*Math.max(5,q.answer*.35+5))+1;let v=Math.random()<.5?q.answer+delta:q.answer-delta;if(v>=0&&v!==q.answer)set.add(v)}
+ $('options').innerHTML='';shuffle([...set]).forEach(v=>{const b=document.createElement('button');b.className='option';b.textContent=digits(v);b.onclick=()=>answer(v,b);$('options').append(b)})
+}
+function playTone(){try{const c=new(window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=790;g.gain.value=.055;o.start();o.stop(c.currentTime+.15);setTimeout(()=>c.close(),250)}catch(e){}}
+function answer(v,btn){
+ if(locked)return;locked=true;const q=questions[idx],ok=v===q.answer;
+ [...$('options').children].forEach(b=>{b.disabled=true;if(b.textContent===digits(q.answer))b.classList.add('correct')});
+ if(ok){correct++;data.stars++;$('feedback').textContent=['✨ رائعة! 👑','🌟 مبدعة!','💜 أحسنتِ يا بطلة!','✨ إجابة ملكية!'][Math.floor(Math.random()*4)];$('feedback').style.color='#218354';playTone()}
+ else{wrong++;btn.classList.add('wrong');$('feedback').textContent='💜 لا بأس، الإجابة الصحيحة هي '+digits(q.answer)+'. أضيفت للمراجعة.';$('feedback').style.color='#a34b70';const key=q.a+'x'+q.b;if(!data.errors.some(e=>e.key===key))data.errors.push({a:q.a,b:q.b,answer:q.answer,key});save()}
+ $('qStars').textContent=digits(data.stars);$('qCorrect').textContent=digits(correct);$('headerStars').textContent=digits(data.stars);
+ $('qBar').style.width=((idx+1)/questions.length*100)+'%';$('qPercent').textContent=digits(Math.round((idx+1)/questions.length*100))+'٪';
+ setTimeout(()=>{idx++;renderQuestion()},850)
+}
+function finish(){
+ clearInterval(timer);timer=null;const total=questions.length,pct=total?correct/total*100:0,perfect=correct===total;
+ data.completed.push(mode==='game'?'جدول '+activeTable+' – '+gameType:mode);if(perfect&&mode==='test')data.perfect++;save();
+ $('resultGreeting').textContent='أحسنتِ يا '+student+'! انتهت مغامرتكِ.';$('rCorrect').textContent=digits(correct);$('rWrong').textContent=digits(wrong);$('rScore').textContent=digits(Math.round(pct))+'٪';$('rStars').textContent=digits(correct);$('rTime').textContent=fmt(elapsed());$('rStatus').textContent=perfect?'أميرة القلعة 👑':'أميرة مجتهدة';$('certName').textContent=student;
+ $('perfectBox').classList.toggle('hidden',!perfect||mode!=='test');view('result')
+}
+function renderErrors(){
+ $('errorCount').textContent=digits(data.errors.length);$('errorList').innerHTML='';
+ if(!data.errors.length){$('errorList').innerHTML='<p class="subtitle">رائع! لا توجد أخطاء مسجلة حاليًا. 🌟</p>';$('retryErrors').classList.add('hidden');return}
+ data.errors.forEach(e=>{const d=document.createElement('div');d.className='fact';d.textContent=digits(e.a)+' × '+digits(e.b)+' = '+digits(e.answer);$('errorList').append(d)});
+ $('retryErrors').classList.remove('hidden')
+}
+function renderProgress(){
+ $('pStars').textContent=digits(data.stars);$('pGames').textContent=digits(data.completed.length);$('pErrors').textContent=digits(data.errors.length);$('pPerfect').textContent=digits(data.perfect);$('tableProgress').innerHTML='';
+ tables.forEach(n=>{const d=document.createElement('div');d.className='card';d.innerHTML='<div class="emoji">📘</div><h3>جدول '+digits(n)+'</h3><div class="muted">'+(data.completed.some(x=>x.includes('جدول '+n+' –'))?'خضتِ لعبة فيه':'بانتظار مغامرتكِ')+'</div>';$('tableProgress').append(d)})
+}
+function renderHome(){$('headerStars').textContent=digits(data.stars);$('homeStars').textContent=digits(data.stars);$('homeGames').textContent=digits(data.completed.length);$('homePerfect').textContent=digits(data.perfect)}
+document.querySelectorAll('.navbtn').forEach(b=>b.onclick=()=>view(b.dataset.view));
+document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>view(b.dataset.goto));
+$('learnTable').onchange=facts;$('gameTable').onchange=gameCards;
+$('learnPlay').onclick=()=>{$('gameTable').value=$('learnTable').value;gameCards();view('games')};
+$('startTest').onclick=()=>startRound('test');
+$('retryErrors').onclick=()=>{if(data.errors.length)startRound('errors',0,1,data.errors.map(e=>({a:e.a,b:e.b,answer:e.answer})))};
 $('clearErrors').onclick=()=>{if(confirm('هل تريدين مسح سجل الأخطاء؟')){data.errors=[];save();renderErrors()}};
-$('quitPlay').onclick=()=>{clearInterval(timer);view('games')};$('again').onclick=()=>view('test');$('backHome').onclick=()=>view('home');$('printCert').onclick=()=>window.print();
-facts();gameCards();renderProgress();
+$('quitPlay').onclick=()=>{clearInterval(timer);timer=null;view('games')};
+$('again').onclick=()=>view('test');$('backHome').onclick=()=>view('home');$('printCert').onclick=()=>window.print();
+populate('learnTable');populate('gameTable');facts();gameCards();renderProgress();renderHome();
 })();
 </script>
-</body></html>
+</body>
+</html>
